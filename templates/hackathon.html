@@ -1,0 +1,82 @@
+{% extends 'baseDashboard.html' %}
+{% load static %}
+{% block content %}
+
+<h2 style="text-align:center;">HACKATHON PROJECTS</h2>
+
+<div class="search">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search Project titles.." title="Type in a name">
+</div> 
+
+<div class="filter">
+    <select name="branch" class='branch' id="branch" data-attribute="class">
+        <option value="">-- Branch --</option>
+        <option value="civil">CIVIL</option>
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="eee">EEE</option>
+        <option value="mech">Mech</option>
+    </select>
+    <select name="year" class='year' id="year" data-attribute="class">
+        <option value="">-- Year --</option> 
+        <option value="2nd">2nd</option>
+        <option value="3rd">3rd</option>
+        <option value="4th">4th</option>
+    </select>
+</div>
+
+<div class="cont2">
+ <table class="table mt-5 table-striped" id="myTable">
+   <thead class="text-white">
+     <tr style="background-color: rgba(93, 93, 255, 0.692);">
+      <th scope="col"><b>S.NO</b></th>
+       <th scope="col"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PTOJECT TITLE</b></th>
+       <th scope="col"><b>TL ROLL NO</b></th>
+       <th scope="col"><b>TL NAME</b></th>
+       <th scope="col"><b>BRANCH</b></th>
+       <th scope="col"><b>YEAR</b></th>
+       <th scope="col"><b>SUBMITTED DATE </b></th>                
+       <th scope="col"><b>EDIT/VIEW</b></th>
+     </tr>
+   </thead>
+   <tbody>
+
+     {% for p in projects %}
+     <tr>
+      <td></td>
+       <td scope="row"> <b> {{p.project_title}} </b> </td>
+       {% comment %} <td scope="row">{{p.sno}}</td> {% endcomment %}
+       <td>{{p.roll_no}}</td>
+       <td>{{p.name}}</td>
+       <td>{{p.branch}}</td>
+       <td>{{p.year}}</td>
+       <td>{{p.date_created}}</td>
+       <td>
+       <button class="btn-sm btn-success"> <i class="fa fa-download" aria-hidden="true"></i> <a style="color: white;" href="{{p.document}}"target="_blank">Document </a></button >
+   
+       {% comment %} <button class="btn-sm btn-primary"> <i class="fa fa-eye"></i>  <a style="color: white;" href="{{p.video}}" target="_blank">Video</a></button> {% endcomment %}
+       </td>
+     </tr>
+
+     {% endfor %}
+   </tbody>
+ </table>
+</div>
+
+</main>
+<!-- page-content" -->
+
+</div>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<script>
+
+</script>
+
+{% endblock content %}

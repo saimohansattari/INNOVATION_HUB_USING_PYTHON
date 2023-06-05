@@ -1,0 +1,75 @@
+{% extends 'baseDashboard.html' %}
+{% load static %}
+{% block content %}
+
+<h2 style="text-align:center;">FINAL PROJECTS</h2>
+
+<div class="search">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search Project titles.." title="Type in a name">
+</div> 
+
+<div class="filter">
+    <select name="branch" class="branch" id="branch">
+        <option value="">-- Branch --</option>
+        <option value="civil">CIVIL</option>
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="eee">EEE</option>
+        <option value="mech">Mech</option>
+    </select>
+    <select name="year" class="year" id="year">
+        <option value="">-- Year --</option>
+        <option value="2nd">2nd</option>
+        <option value="3rd">3rd</option>
+        <option value="4th">4th</option>
+    </select>
+    <select name="Batch" class="Batch" id="Batch">
+        <option value="">-- Batch --</option>
+        <option value="2017-2021">2017-2021</option>
+        <option value="2018-2022">2018-2022</option>
+        <option value="2019-2023">2019-2023</option>
+        <option value="2020-2024">2020-2024</option>
+        <option value="2021-2025">2021-2025</option>
+    </select>
+</div>
+
+<div class="cont2">
+ <table class="table mt-5 table-striped" id="myTable">
+   <thead class="text-white">
+     <tr style="background-color: rgba(93, 93, 255, 0.692);">
+      <th scope="col"><b>S.NO</b></th>
+       <th scope="col"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROJECT TITLE</b></th>
+       <th scope="col"><b>TL ROLL NO</b></th>
+       <th scope="col"><b>TL NAME</b></th>
+       <th scope="col"><b>BRANCH</b></th>
+       <th scope="col"><b>BATCH</b></th>
+       <th scope="col"><b>YEAR</b></th>
+       <th scope="col"><b>SUNBMITTED DATE</b></th>                
+       <th scope="col"><b>EDIT/VIEW</b></th>
+     </tr>
+   </thead>
+   <tbody>
+
+     {% for p in projects %}
+     <tr>
+       <td></td>
+       <td scope="row"> <strong>{{p.project_title}}</strong> </td>
+       <td>{{p.roll_no}}</td>
+       <td>{{p.name}}</td>
+       <td>{{p.branch}}</td>
+       <td>{{p.batch}}</td>
+       <td>{{p.year}}</td>
+       <td>{{p.date_created}}</td>
+       <td>
+       <button class="btn-sm btn-success"> <i class="fa fa-download" aria-hidden="true"></i> <a style="color: white;" href="{{p.document}}"target="_blank">Document</a></button>
+       <button class="btn-sm btn-primary"> <i class="fa fa-eye"></i>  <a style="color: white;" href="{{p.video}}" target="_blank">Journal</a></button>
+       </td>
+     </tr>
+
+     {% endfor %}
+   </tbody>
+ </table>
+
+</div>
+
+{% endblock content  %}

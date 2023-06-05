@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>  </title>
+</head>
+<body>
+    <div class="header">
+    
+        <div class="head-sec">
+            <img src="http://thebetterandhra.com/site_media/biz/logo/e8d265ba-c678-4935-bd36-9ab7fd61b508.jpg" alt="logo">
+            <h4 style="color: white;">WISTM ONLINE INOVATION HUB</h4>
+        </div>
+        
+        <div class="head-sec">
+              <div class="dropdown">
+                  <button class="dropbtn"><b>FACULTY</b></button>
+                  <div class="dropdown-content">
+                  <a href="/admin">login</a>
+                  {% comment %} <a href="/admin">register</a> {% endcomment %}
+                  </div>
+              </div>
+
+              <div class="dropdown">
+                <a href="{% url 'dashboard'  %}"> <button class="dropbtn"><b>VIEWERS</b></button> </a>
+                  
+              </div>
+        </div>
+    </div>
+
+   <div class="main-container">
+        <div class="card">
+            <marquee style="height: 100%;" direction = "up" scrolldelay="100" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();">
+              Innovation is the key to betterment of education and students in the Indian universities/colleges put a lot of efforts on the projects as a part of the academic requirements. If a common knowledge is created to bring all project works taken up at various levels by the students in Technical / Higher Educational Institute. then it will be a great source of knowledge and also will help the student community to take up unique/innovative project works Summary: An integrated platform should be developed where in all the universities/Colleges provide information about the projects done by the students. The information on this platform will help in the peer learning and this will also help in cross functional research between students. Objective: : To develop an online integrated platform for projects taken up by the students of WISTM college.<br>
+              <br>
+              
+            </marquee>
+        </div>
+
+        <div class="card">
+            <p><u> Four Projects : </u></p>
+           
+            <a href="/media/Shyamala Mini Project DOC.pdf" target="_blank"><div class="card mb-3" style="max-width: 540px;" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://pryormediacdn.azureedge.net/wordpress/2016/11/Five-of-the-Best-Online-Project-Management-Tools.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">FAKE NEWS DETECTION</h5>
+                      <p class="card-text">this website which contains about news whether it is true or fake...</p>
+                    </div>
+                  </div>               
+                </div>
+            </div></a>
+
+            <a href="/media/e-commerce.pdf" target="_blank"><div class="card mb-3" style="max-width: 540px;" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-03/e-commerce-definizione-cos-e.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">E-COMMERCE</h5>
+                      <p class="card-text">Get your things delivered to your door step</p>
+                    </div>
+                  </div>
+                </div>
+            </div></a>
+
+            <a href="/media/local_jobs.pdf" target="_blank"><div class="card mb-3" style="max-width: 540px;" target="_blank">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://i.ytimg.com/vi/ZFMJqvjtKEo/maxresdefault.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">LOCAL JOBS</h5>
+                      <p class="card-text">Finding the local jobs these days is not easy...</p>
+                    </div>
+                  </div>
+                </div>
+            </div></a>
+
+            <a href="/media/ONLINE FEE  MANAGEMENT.pdf" target="_blank"><div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://www.seekpng.com/png/detail/76-760960_big-red-x-transparent-background-fee-management-system.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">FEE MANAGEMENT SYSTEM</h5>
+                      <p class="card-text">Manages debts and credits of the college invoices ...</p>
+                    </div>
+                  </div>
+                </div>
+            </div></a>
+     
+
+        </div>
+
+   </div>
+
+   <footer>
+       <p>copy rights @WISTM</p>
+   </footer>
+    
+</body>
+</html>
